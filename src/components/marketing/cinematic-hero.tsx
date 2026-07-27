@@ -110,6 +110,14 @@ export function CinematicHero({
           )}
 
           <motion.div variants={itemVariants}>
+            <a
+              href={ctaHref}
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-terracotta px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-terracotta/90"
+            >
+              {ctaText}
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+            </a>
+          </motion.div>
             <Button
               asChild
               size="lg"
