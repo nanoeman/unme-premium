@@ -3,7 +3,6 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
 interface CinematicHeroProps {
@@ -117,17 +116,6 @@ export function CinematicHero({
               {ctaText}
               <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
             </a>
-          </motion.div>
-            <Button
-              asChild
-              size="lg"
-              className="group bg-terracotta text-white hover:bg-terracotta/90"
-            >
-              <a href={ctaHref}>
-                {ctaText}
-                <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-              </a>
-            </Button>
           </motion.div>
         </motion.div>
       </motion.div>
