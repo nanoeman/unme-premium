@@ -1,4 +1,4 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import bcrypt from "bcryptjs";
@@ -68,3 +68,8 @@ export const authOptions: NextAuthOptions = {
     error: "/area-privada",
   },
 };
+
+// Helper para server actions
+export async function auth() {
+  return getServerSession(authOptions);
+}

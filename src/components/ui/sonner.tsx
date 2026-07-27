@@ -1,4 +1,6 @@
-import { useTheme } from "next-themes"
+"use client";
+
+import { useTheme } from "next-themes""next-themes""next-themes"
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
 

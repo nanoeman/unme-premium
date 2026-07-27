@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/layout/header";
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html
