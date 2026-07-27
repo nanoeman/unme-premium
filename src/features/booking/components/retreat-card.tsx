@@ -147,6 +147,21 @@ export function RetreatCard({
         </div>
 
         {/* CTA */}
+        {status === 'CLOSED' ? (
+          <button
+            disabled
+            className="w-full rounded-lg bg-stone-400 px-4 py-2 text-sm font-medium text-white cursor-not-allowed"
+          >
+            No disponible
+          </button>
+        ) : (
+          <Link
+            href={`/retiros/${slug}`}
+            className="inline-flex w-full items-center justify-center rounded-lg bg-sage-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sage-700"
+          >
+            Ver detalles
+          </Link>
+        )}
         <Button
           asChild
           className="w-full bg-sage-600 text-white hover:bg-sage-700"
