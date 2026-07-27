@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Star, MapPin, Users, Calendar } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -162,15 +161,6 @@ export function RetreatCard({
             Ver detalles
           </Link>
         )}
-        <Button
-          asChild
-          className="w-full bg-sage-600 text-white hover:bg-sage-700"
-          disabled={status === 'CLOSED'}
-        >
-          <Link href={`/retiros/${slug}`}>
-            {status === 'CLOSED' ? 'No disponible' : 'Ver detalles'}
-          </Link>
-        </Button>
       </div>
     </motion.div>
   );
