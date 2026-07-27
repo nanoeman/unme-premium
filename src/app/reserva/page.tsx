@@ -1,13 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Reserva | UNME",
-  description:
-    "Formulario de reserva multipaso. Selecciona tu experiencia, fecha y completa el pago de forma segura.",
-};
+import Link from "next/link";
+import { ArrowRight, Sparkles, Compass, Heart, ShieldCheck } from "lucide-react";
 
 const STEPS = ["Experiencia", "Fecha", "Datos", "Pago"];
 

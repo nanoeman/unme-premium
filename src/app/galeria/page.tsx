@@ -1,15 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Metadata } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Galería | UNME",
-  description:
-    "Portafolio visual de alta definición. Descubre UNME en imágenes.",
-};
 
 const IMAGES = [
   { id: 1, src: "/gallery/1.jpg", caption: "Tiendas Glamping Premium", aspect: "aspect-[3/4]" },

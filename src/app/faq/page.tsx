@@ -1,15 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Metadata } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "FAQ | UNME",
-  description:
-    "Preguntas frecuentes sobre reservas, pagos, políticas de cancelación y acceso.",
-};
 
 const FAQS = [
   {
