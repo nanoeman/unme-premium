@@ -4,6 +4,8 @@ export default defineConfig({
   earlyAccess: true,
   schema: './prisma/schema.prisma',
   datasource: {
+    url: 'file:./dev.db',
+  },
     provider: 'sqlite',
     url: 'file:./dev.db',
   },
