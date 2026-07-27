@@ -10,7 +10,7 @@ export function formatCurrency(amount: number | string | { toNumber(): number })
   const value =
     typeof amount === "string"
       ? parseFloat(amount)
-      : typeof amount === "object" && amount !== null && "toNumber" in amount"object" && amount !== null && "toNumber" in amount"object" && amount !== "null" && "toNumber" in amount
+      : typeof amount === "object" && amount !== null && "toNumber" in amount
       ? amount.toNumber()
       : (amount as number);
 
