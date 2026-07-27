@@ -6,7 +6,4 @@ export default defineConfig({
   datasource: {
     url: 'file:./dev.db',
   },
-    provider: 'sqlite',
-    url: 'file:./dev.db',
-  },
 });
