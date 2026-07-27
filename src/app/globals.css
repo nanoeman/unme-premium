@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Quattrocento Sans", system-ui, sans-serif;
+    --font-display: "Cormorant Garamond", serif;
+    --font-elegant: "Cormorant Garamond", serif;
+
+    /* Paleta UNME Premium */
+    --color-forest: #3A4F3D;
+    --color-taupe: #8B7355;
+    --color-amber: #C4956A;
+    --color-linen: #F5F0EB;
+    --color-surface: #EDE8E1;
+    --color-earth: #2C2420;
+    --color-muted: #A09890;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-linen);
+    color: var(--color-earth);
+  }
+
+  ::selection {
+    background-color: #c5d8c5;
+    color: #283928;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(135deg, #3A4F3D 0%, #8B7355 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(245, 240, 235, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-dark {
+    background: rgba(44, 36, 32, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}

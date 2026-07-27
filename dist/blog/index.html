@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | UNME</title>
+<style>
+:root{--forest:#3A4F3D;--taupe:#8B7355;--amber:#C4956A;--linen:#F5F0EB;--surface:#EDE8E1;--earth:#2C2420;--muted:#A09890;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Georgia','Times New Roman',serif;background:var(--linen);color:var(--earth);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(44,36,32,0.9);backdrop-filter:blur(12px)}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+.logo{font-family:Georgia,serif;font-size:24px;letter-spacing:3px;color:#F5F0EB;text-transform:uppercase}
+nav{display:flex;align-items:center;gap:32px}
+nav a{font-size:12px;letter-spacing:1px;color:rgba(245,240,235,0.7);text-transform:uppercase;transition:color 0.3s}
+nav a:hover{color:#F5F0EB}
+nav .cta{background:var(--amber);padding:10px 24px;font-size:12px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--earth);text-align:center;padding:120px 24px 80px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(245,240,235,0.2);background:rgba(245,240,235,0.1);padding:6px 16px;font-size:11px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(36px,6vw,72px);font-weight:400;line-height:1.1;color:#F5F0EB;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--amber)}
+.hero p{font-size:18px;color:rgba(245,240,235,0.7);max-width:600px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--forest);padding:16px 32px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary{border:1px solid rgba(245,240,235,0.3);background:rgba(245,240,235,0.1);padding:16px 32px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px}
+
+/* Sections */
+.section{padding:96px 24px;max-width:1200px;margin:0 auto}
+.section-dark{background:#F0EBE5}
+.section-title{font-family:Georgia,serif;font-size:32px;color:var(--forest);margin-bottom:16px}
+.section-subtitle{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--forest);margin-bottom:8px;display:block}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;padding:64px 24px;background:#F0EBE5;border-bottom:1px solid #D4CEC2}
+.stat-number{font-family:Georgia,serif;font-size:42px;color:var(--amber);line-height:1}
+.stat-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-top:8px}
+
+/* Cards */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.card{border:1px solid #D4CEC2;background:#fff;padding:32px;transition:box-shadow 0.3s}
+.card:hover{box-shadow:0 8px 40px rgba(0,0,0,0.08)}
+.card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:24px}
+.card h3{font-family:Georgia,serif;font-size:20px;color:var(--forest);margin-bottom:12px}
+.card p{font-size:14px;color:var(--earth);opacity:0.7}
+
+/* Experiencias */
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.exp-card{border:1px solid #D4CEC2;background:#fff;overflow:hidden}
+.exp-img{height:240px;background:linear-gradient(135deg,var(--taupe),var(--forest));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:48px;font-family:Georgia,serif}
+.exp-body{padding:24px}
+.exp-tag{display:inline-block;background:var(--forest);padding:4px 12px;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:12px}
+.exp-body h3{font-family:Georgia,serif;font-size:20px;color:var(--forest);margin-bottom:8px}
+.exp-price{font-family:Georgia,serif;font-size:20px;color:var(--amber);margin-top:16px}
+
+/* Features */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px}
+.feature-card{border:1px solid #D4CEC2;background:#fff;padding:32px}
+.feature-icon{width:48px;height:48px;background:#E3EBE3;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px;color:var(--forest)}
+.feature-card h3{font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px}
+.feature-card p{font-size:14px;color:var(--earth);opacity:0.7}
+
+/* CTA */
+.cta-section{background:var(--forest);padding:96px 24px;text-align:center;color:#F5F0EB}
+.cta-section h2{font-family:Georgia,serif;font-size:36px;margin-bottom:16px}
+.cta-section p{font-size:18px;opacity:0.7;margin-bottom:40px}
+.btn-cta{background:var(--amber);padding:16px 40px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px;display:inline-block}
+
+/* Footer */
+footer{background:var(--earth);padding:64px 24px 32px;color:rgba(245,240,235,0.6)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+footer h3{font-family:Georgia,serif;font-size:24px;color:#F5F0EB;margin-bottom:16px}
+footer h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#F5F0EB;margin-bottom:16px}
+footer a{display:block;margin-bottom:8px;font-size:14px;transition:color 0.3s}
+footer a:hover{color:var(--amber)}
+footer .bottom{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(245,240,235,0.1);font-size:12px}
+
+/* Forms */
+.form-group{margin-bottom:24px}
+.form-group label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid #D4CEC2;background:#fff;font-size:16px;color:var(--earth);font-family:inherit}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--forest)}
+.btn-submit{background:var(--forest);padding:14px 32px;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid #D4CEC2}
+.faq-q{padding:20px 0;font-family:Georgia,serif;font-size:18px;color:var(--forest);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-a{padding-bottom:20px;color:var(--earth);opacity:0.7}
+
+/* Gallery */
+.gallery-grid{columns:3;column-gap:16px;margin-top:48px}
+.gallery-item{break-inside:avoid;margin-bottom:16px;background:linear-gradient(135deg,var(--taupe),var(--forest));min-height:200px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:36px;font-family:Georgia,serif}
+
+/* Dashboard */
+.dashboard{padding:120px 24px 48px;max-width:1200px;margin:0 auto}
+.dashboard-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px}
+.dashboard h1{font-family:Georgia,serif;font-size:32px;color:var(--forest)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.stat-card{border:1px solid #D4CEC2;background:#fff;padding:24px}
+.stat-card .label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px}
+.stat-card .value{font-family:Georgia,serif;font-size:32px;color:var(--forest)}
+
+/* Responsive */
+@media(max-width:768px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{columns:2}
+  nav{display:none}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .hero h1{font-size:32px}
+  .gallery-grid{columns:1}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">UNME</a>
+    <nav>
+      <a href="../experiencias/index.html">Experiencias</a>
+      <a href="../eventos/index.html">Eventos</a>
+      <a href="../agenda/index.html">Agenda</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../galeria/index.html">Galería</a>
+      <a href="../contacto/index.html">Contacto</a>
+      <a href="../area-privada/index.html" class="cta">Reservar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="min-height:40vh">
+  <div>
+    <div class="hero-badge">Centro de conocimiento</div>
+    <h1 style="font-size:clamp(32px,5vw,56px)">Blog</h1>
+    <p>Artículos, guías y entrevistas para tu viaje de transformación.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="form-group" style="max-width:500px;margin-bottom:48px">
+    <input type="text" placeholder="Buscar artículos...">
+  </div>
+  <div class="exp-grid">
+    <article class="exp-card">
+      <div class="exp-img" style="height:180px">1</div>
+      <div class="exp-body">
+        <div style="display:flex;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px">
+          <span style="color:var(--forest)">Bienestar</span><span>·</span><span>10 Jul 2026</span><span>·</span><span>5 min</span>
+        </div>
+        <h3 style="font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px">El poder del silencio: por qué la desconexión digital es el nuevo lujo</h3>
+        <p style="font-size:14px;color:var(--earth);opacity:0.7">En un mundo donde estar ocupado es sinónimo de éxito, aprender a hacer pausa se convierte en la habilidad más valiosa.</p>
+      </div>
+    </article>
+    <article class="exp-card">
+      <div class="exp-img" style="height:180px">2</div>
+      <div class="exp-body">
+        <div style="display:flex;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px">
+          <span style="color:var(--forest)">Tendencias</span><span>·</span><span>5 Jul 2026</span><span>·</span><span>7 min</span>
+        </div>
+        <h3 style="font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px">Glamping vs Hotel: por qué los viajeros premium eligen la naturaleza</h3>
+        <p style="font-size:14px;color:var(--earth);opacity:0.7">El sector hospitality está viviendo una revolución silenciosa. Los datos no mienten.</p>
+      </div>
+    </article>
+    <article class="exp-card">
+      <div class="exp-img" style="height:180px">3</div>
+      <div class="exp-body">
+        <div style="display:flex;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px">
+          <span style="color:var(--forest)">Guía</span><span>·</span><span>28 Jun 2026</span><span>·</span><span>8 min</span>
+        </div>
+        <h3 style="font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px">Breathwork 101: la técnica de respiración que cambiará tu vida</h3>
+        <p style="font-size:14px;color:var(--earth);opacity:0.7">Desde Wim Hof hasta las técnicas ancestrales tibetanas.</p>
+      </div>
+    </article>
+    <article class="exp-card">
+      <div class="exp-img" style="height:180px">4</div>
+      <div class="exp-body">
+        <div style="display:flex;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px">
+          <span style="color:var(--forest)">Entrevista</span><span>·</span><span>20 Jun 2026</span><span>·</span><span>10 min</span>
+        </div>
+        <h3 style="font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px">Entrevista: María López, pionera del yoga terapéutico en España</h3>
+        <p style="font-size:14px;color:var(--earth);opacity:0.7">Conversamos con una de las maestras más respetadas del panorama nacional.</p>
+      </div>
+    </article>
+    <article class="exp-card">
+      <div class="exp-img" style="height:180px">5</div>
+      <div class="exp-body">
+        <div style="display:flex;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px">
+          <span style="color:var(--forest)">Nutrición</span><span>·</span><span>15 Jun 2026</span><span>·</span><span>6 min</span>
+        </div>
+        <h3 style="font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px">Nutrición consciente: alimentar el cuerpo, nutrir el alma</h3>
+        <p style="font-size:14px;color:var(--earth);opacity:0.7">No se trata solo de comer sano. Se trata de entender la relación entre lo que consumes y cómo te sientes.</p>
+      </div>
+    </article>
+    <article class="exp-card">
+      <div class="exp-img" style="height:180px">6</div>
+      <div class="exp-body">
+        <div style="display:flex;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--taupe);margin-bottom:8px">
+          <span style="color:var(--forest)">Destinos</span><span>·</span><span>8 Jun 2026</span><span>·</span><span>12 min</span>
+        </div>
+        <h3 style="font-family:Georgia,serif;font-size:18px;color:var(--forest);margin-bottom:8px">Aragón, destino wellness emergente: el informe completo</h3>
+        <p style="font-size:14px;color:var(--earth);opacity:0.7">Análisis de por qué Aragón está posicionándose como el nuevo hub de bienestar del norte de España.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>UNME</h3>
+      <p>Ultimate Natural Meditation Experience. Centro de bienestar premium en Zaragoza.</p>
+    </div>
+    <div>
+      <h4>Experiencias</h4>
+      <a href="../experiencias/index.html">Retiros</a>
+      <a href="../experiencias/index.html">Glamping</a>
+      <a href="../eventos/index.html">Eventos</a>
+      <a href="../agenda/index.html">Agenda</a>
+    </div>
+    <div>
+      <h4>Empresa</h4>
+      <a href="../quienes-somos/index.html">Quiénes somos</a>
+      <a href="../empresas/index.html">Partners</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../galeria/index.html">Galería</a>
+    </div>
+    <div>
+      <h4>Soporte</h4>
+      <a href="../faq/index.html">FAQ</a>
+      <a href="../contacto/index.html">Contacto</a>
+      <a href="../area-privada/index.html">Área privada</a>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>© 2026 UNME Experience. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
