@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
