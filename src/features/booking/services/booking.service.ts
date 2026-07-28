@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { BookingInput } from "../schemas";"./schemas";
+import { BookingInput } from "./schemas";
 
 export class BookingService {
   constructor(private db: typeof prisma) {}
@@ -8,7 +8,7 @@ export class BookingService {
     return this.db.booking.create({
       data: {
         experience: data.experience,
-        date: new Date(data.date),
+        date: data.date,
         guests: data.guests,
         name: data.name,
         email: data.email,
