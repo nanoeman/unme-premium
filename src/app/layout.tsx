@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
 import "@/app/globals.css";
-import { Header } from "@/components/layout/header";
+import { HeaderHydrationGuard } from "@/components/layout/header-hydration-guard";
 import { Footer } from "@/components/layout/footer";
 import { AuthProvider } from "@/components/providers/auth-provider";
 
@@ -53,7 +53,7 @@ export default function RootLayout({
     >
       <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900">
         <AuthProvider>
-          <Header />
+          <HeaderHydrationGuard />
           {children}
           <Footer />
         </AuthProvider>
