@@ -1,1 +1,1 @@
-Fix: datos de contacto correctos en pagina contacto
+Fix: separar fuentes Google (Server) de ClientLayout (Client) - evita problemas de fuentes
