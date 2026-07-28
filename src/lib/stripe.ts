@@ -22,6 +22,17 @@ class StripeStub {
         console.log("[Stripe Stub] PaymentIntent no creado - Stripe no configurado");
         return { id: "stub-pi", client_secret: "stub-secret" };
       },
+      retrieve: async (_id: string) => {
+        console.log("[Stripe Stub] PaymentIntent no recuperado - Stripe no configurado");
+        return { id: "stub-pi", status: "succeeded", client_secret: "stub-secret" };
+      },
+    };
+  }
+    return {
+      create: async (_params: unknown) => {
+        console.log("[Stripe Stub] PaymentIntent no creado - Stripe no configurado");
+        return { id: "stub-pi", client_secret: "stub-secret" };
+      },
     };
   }
 }
