@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import dynamic from "next/dynamic";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
 import "@/app/globals.css";
 
@@ -16,6 +17,12 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   display: "swap",
 });
+
+// Carga todo el contenido interactivo SOLO en el cliente (evita hydration errors)
+const ClientShell = dynamic(
+  () => import("@/components/client-shell").then((mod) => mod.ClientShell),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: "UNME — Ultimate Natural Meditation Experience",
@@ -50,7 +57,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900" suppressHydrationWarning>
-        {children}
+        <ClientShell>{children}</ClientShell>
       </body>
     </html>
   );

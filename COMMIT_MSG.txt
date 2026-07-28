@@ -1,1 +1,1 @@
-Fix: hydration error React #418 - HeaderHydrationGuard
+Fix: hydration error - next/dynamic ssr:false para ClientShell
