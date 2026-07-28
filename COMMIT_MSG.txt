@@ -1,1 +1,1 @@
-Fix: hydration error - next/dynamic ssr:false para ClientShell
+Fix: hydration error - Header como Server Component estatico, layout simplificado
