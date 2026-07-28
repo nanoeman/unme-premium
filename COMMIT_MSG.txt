@@ -1,1 +1,1 @@
-Fix: hydration error - Header como Server Component estatico, layout simplificado
+Fix: datos de contacto correctos en pagina contacto

@@ -94,8 +94,8 @@ export default function ContactoPage() {
                   Información de contacto
                 </h3>
                 <div className="space-y-3 text-earth-600">
-                  <p>📧 info@unme-experience.com</p>
-                  <p>📱 +34 123 456 789</p>
+                  <p>📧 unmezg@gmail.com</p>
+                  <p>📱 +34 609 371 555</p>
                   <p>📍 Zaragoza, Aragón, España</p>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function ContactoPage() {
                   Canales VIP
                 </h3>
                 <a
-                  href="https://wa.me/34123456789"
+                  href="https://wa.me/34609371555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-green-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-green-700"
