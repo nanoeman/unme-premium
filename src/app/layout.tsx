@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
 import "@/app/globals.css";
-import { HeaderHydrationGuard } from "@/components/layout/header-hydration-guard";
-import { Footer } from "@/components/layout/footer";
-import { AuthProvider } from "@/components/providers/auth-provider";
 
 const quattrocento = Quattrocento_Sans({
   subsets: ["latin"],
@@ -50,13 +47,10 @@ export default function RootLayout({
     <html
       lang="es"
       className={`${quattrocento.variable} ${cormorant.variable}`}
+      suppressHydrationWarning
     >
-      <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900">
-        <AuthProvider>
-          <HeaderHydrationGuard />
-          {children}
-          <Footer />
-        </AuthProvider>
+      <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900" suppressHydrationWarning>
+        {children}
       </body>
     </html>
   );
