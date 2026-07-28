@@ -31,7 +31,7 @@ export async function getRetreatAvailability(
     },
   });
 
-  const availability = schedules.map(schedule => ({
+  const availability = schedules.map((schedule: any) => ({
     ...schedule,
     spotsLeft: schedule.spotsTotal - schedule.bookings.length,
   }));
