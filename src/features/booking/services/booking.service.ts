@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { BookingInput } from "./schemas";
+import { BookingInput } from "../schemas";"./schemas";
 
 export class BookingService {
   constructor(private db: typeof prisma) {}
