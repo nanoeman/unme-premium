@@ -5,11 +5,12 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Paleta UNME Premium — Del dossier de arquitectura
+        // Paleta UNME Premium
         forest: {
           DEFAULT: "#3A4F3D",
           50: "#f4f7f4",
@@ -19,7 +20,7 @@ const config: Config = {
           400: "#7ba37b",
           500: "#5a855a",
           600: "#466b46",
-          700: "#3A4F3D", // Primary
+          700: "#3A4F3D",
           800: "#304530",
           900: "#283928",
         },
@@ -31,7 +32,7 @@ const config: Config = {
           300: "#d4c9ba",
           400: "#b8a894",
           500: "#9e8d76",
-          600: "#8B7355", // Secondary
+          600: "#8B7355",
           700: "#6d5a43",
           800: "#5a4a37",
           900: "#4a3d2e",
@@ -43,7 +44,7 @@ const config: Config = {
           200: "#f0d4b8",
           300: "#e4b88a",
           400: "#d4a070",
-          500: "#C4956A", // Accent
+          500: "#C4956A",
           600: "#a67d55",
           700: "#8a6645",
           800: "#70533a",
@@ -51,8 +52,8 @@ const config: Config = {
         },
         linen: {
           DEFAULT: "#F5F0EB",
-          50: "#F5F0EB", // Background
-          100: "#EDE8E1", // Surface
+          50: "#F5F0EB",
+          100: "#EDE8E1",
           200: "#e0d9d0",
           300: "#cdc4b8",
           400: "#b5a994",
@@ -72,13 +73,12 @@ const config: Config = {
           500: "#7a6a5e",
           600: "#5e5148",
           700: "#4a3f38",
-          800: "#2C2420", // Text
+          800: "#2C2420",
           900: "#1a1613",
         },
         muted: {
           DEFAULT: "#A09890",
         },
-        // Colores adicionales para componentes shadcn/ui
         stone: {
           DEFAULT: "#78716c",
           50: "#fafaf9",
@@ -161,12 +161,6 @@ const config: Config = {
         card: {
           DEFAULT: "#F5F0EB",
           foreground: "#2C2420",
-        },
-      },
-          DEFAULT: "#F5F0EB",
-          foreground: "#2C2420",
-        },
-          DEFAULT: "#A09890",
         },
       },
       fontFamily: {
