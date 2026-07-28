@@ -4,7 +4,7 @@ import { BookingInput } from "../schemas";
 export class BookingService {
   constructor(private db: typeof prisma) {}
 
-  async create(data: BookingInput & { userId?: string }) {
+  async create(data: BookingInput) {
     return this.db.booking.create({
       data: {
         experience: data.experience,
@@ -14,7 +14,6 @@ export class BookingService {
         email: data.email,
         phone: data.phone,
         status: "PENDING",
-        ...(data.userId ? { userId: data.userId } : {}),
       },
     });
   }
@@ -22,7 +21,7 @@ export class BookingService {
   async getByEmail(email: string) {
     return this.db.booking.findMany({
       where: { email },
-      orderBy: { date: "asc" },
+      orderBy: { createdAt: "asc" },
     });
   }
 }

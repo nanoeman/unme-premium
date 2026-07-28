@@ -222,11 +222,11 @@ enum RoomType {
 
 model Booking {
   id              String        @id @default(cuid())
-  userId          String
-  scheduleId      String
+  userId          String?
+  scheduleId      String?
   retreatId       String?
   status          BookingStatus @default(PENDING)
-  totalAmount     Float
+  totalAmount     Float         @default(0)
   depositAmount   Float?
   paidAmount      Float         @default(0)
   paymentStatus   PaymentStatus @default(PENDING)
@@ -234,8 +234,8 @@ model Booking {
   specialRequests String?
   couponCode      String?
   discountAmount  Float?
-  checkIn         DateTime
-  checkOut        DateTime
+  checkIn         DateTime?
+  checkOut        DateTime?
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
   
@@ -246,8 +246,8 @@ model Booking {
   email           String?
   phone           String?
 
-  user            User          @relation(fields: [userId], references: [id])
-  schedule        RetreatSchedule @relation(fields: [scheduleId], references: [id])
+  user            User?          @relation(fields: [userId], references: [id])
+  schedule        RetreatSchedule? @relation(fields: [scheduleId], references: [id])
   retreat         Retreat?        @relation(fields: [retreatId], references: [id])
   rooms           BookingRoom[]
   payments        Payment[]
