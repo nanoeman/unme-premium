@@ -22,10 +22,7 @@ export async function createBooking(
 
   // 3. Ejecución de negocio (servicio desacoplado)
   const bookingService = new BookingService(prisma);
-  const booking = await bookingService.create({
-    ...validated,
-    userId: session.user.id,
-  });
+  const booking = await bookingService.create(validated);
 
   // 4. Side effects (notificaciones, etc.)
   // ... handled via event bus or queue
