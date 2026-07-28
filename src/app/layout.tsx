@@ -1,7 +1,6 @@
-export const dynamic = 'force-dynamic';
+"use client";
 
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/layout/header";
@@ -21,39 +20,35 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "UNME — Ultimate Natural Meditation Experience",
-  description:
-    "Centro de bienestar premium en Zaragoza. Retiros espirituales, glamping de lujo y experiencias de transformación personal en la naturaleza.",
-  keywords: [
-    "wellness",
-    "meditación",
-    "glamping",
-    "retiros",
-    "Zaragoza",
-    "bienestar",
-    "naturaleza",
-  ],
-  openGraph: {
-    title: "UNME — Ultimate Natural Meditation Experience",
-    description: "La naturaleza como herramienta de transformación personal.",
-    type: "website",
-    locale: "es_ES",
-  },
-};
-
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <html lang="es" className={`${quattrocento.variable} ${cormorant.variable}`}>
+        <body className="font-sans bg-linen text-earth-800 antialiased">
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <div className="font-display text-4xl tracking-wider text-forest-700 uppercase mb-4">UNME</div>
+              <div className="text-sm text-taupe-600 uppercase tracking-wide">Cargando experiencia...</div>
+            </div>
+          </div>
+        </body>
+      </html>
+    );
+  }
+
   return (
-    <html
-      lang="es"
-      className={`${quattrocento.variable} ${cormorant.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900" suppressHydrationWarning>
+    <html lang="es" className={`${quattrocento.variable} ${cormorant.variable}`}>
+      <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900">
         <Header />
         {children}
         <Footer />
