@@ -1,1 +1,1 @@
-Fix: separar fuentes Google (Server) de ClientLayout (Client) - evita problemas de fuentes
+Fix: email correcto unmezgz@gmail.com, precios a Consultar

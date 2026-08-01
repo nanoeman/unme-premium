@@ -199,6 +199,22 @@ export default function HomePage() {
             {[
               {
                 title: "Retiro de Yoga & Meditación",
+                price: "Consultar",
+                tag: "Más popular",
+              },
+              {
+                title: "Sound Healing Retreat",
+                price: "Consultar",
+                tag: "Nuevo",
+              },
+              {
+                title: "Corporate Wellness B2B",
+                price: "Consultar",
+                tag: "B2B",
+              },
+            ].map((exp) => (
+              {
+                title: "Retiro de Yoga & Meditación",
                 price: "€890",
                 tag: "Más popular",
               },

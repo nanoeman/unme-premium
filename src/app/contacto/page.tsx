@@ -94,7 +94,7 @@ export default function ContactoPage() {
                   Información de contacto
                 </h3>
                 <div className="space-y-3 text-earth-600">
-                  <p>📧 unmezg@gmail.com</p>
+                  <p>📧 unmezgz@gmail.com</p>
                   <p>📱 +34 609 371 555</p>
                   <p>📍 Zaragoza, Aragón, España</p>
                 </div>
