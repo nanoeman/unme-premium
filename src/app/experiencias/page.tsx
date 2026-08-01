@@ -50,49 +50,6 @@ const EXPERIENCES = [
     tag: null,
   },
 ];
-  {
-    title: "Retiro de Yoga & Meditación",
-    desc: "Un fin de semana inmersivo con maestros certificados. Yoga al amanecer, meditación guiada y gastronomía consciente.",
-    price: "€890",
-    duration: "2 días / 1 noche",
-    tag: "Más popular",
-  },
-  {
-    title: "Glamping Premium Experience",
-    desc: "Alojamiento en tiendas de lujo totalmente equipadas. Desconexión total con todas las comodidades.",
-    price: "€450",
-    duration: "2 días / 1 noche",
-    tag: "Nuevo",
-  },
-  {
-    title: "Sound Healing Retreat",
-    desc: "Terapia de sonido con cuencos tibetanos, gongs y frecuencias curativas. Sanación a nivel celular.",
-    price: "€720",
-    duration: "2 días / 1 noche",
-    tag: null,
-  },
-  {
-    title: "Corporate Wellness B2B",
-    desc: "Programas de team building y bienestar para empresas. Infraestructura completa para eventos corporativos.",
-    price: "Desde €8.000",
-    duration: "Fin de semana completo",
-    tag: "B2B",
-  },
-  {
-    title: "Detox & Nutrición Consciente",
-    desc: "Programa de desintoxicación guiado por nutricionistas. Jugos, alimentación raw y talleres de cocina saludable.",
-    price: "€950",
-    duration: "3 días / 2 noches",
-    tag: null,
-  },
-  {
-    title: "Respiración Consciente & Breathwork",
-    desc: "Técnicas avanzadas de respiración para liberar tensiones y expandir la capacidad vital.",
-    price: "€680",
-    duration: "2 días / 1 noche",
-    tag: null,
-  },
-];
 
 export default function ExperienciasPage() {
   return (
