@@ -213,22 +213,6 @@ export default function HomePage() {
                 tag: "B2B",
               },
             ].map((exp) => (
-              {
-                title: "Retiro de Yoga & Meditación",
-                price: "€890",
-                tag: "Más popular",
-              },
-              {
-                title: "Sound Healing Retreat",
-                price: "€720",
-                tag: "Nuevo",
-              },
-              {
-                title: "Corporate Wellness B2B",
-                price: "Desde €8.000",
-                tag: "B2B",
-              },
-            ].map((exp) => (
               <div
                 key={exp.title}
                 className="group flex flex-col overflow-hidden border border-taupe-200 bg-linen transition-all hover:shadow-elevated"
