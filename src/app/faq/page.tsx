@@ -10,15 +10,15 @@ const FAQS = [
     questions: [
       {
         q: "¿Cómo puedo hacer una reserva?",
-        a: "Puedes reservar directamente a través de nuestro formulario web en la sección 'Reserva'. El proceso es multipaso: seleccionas experiencia, fecha, número de personas y completas el pago seguro vía Stripe o PayPal.",
+        a: "Puedes reservar directamente a través de nuestro formulario web. Seleccionas el retiro, fecha, tipo (individual o grupo), y realizas el pago mínimo del 70% para confirmar tu plaza. El resto se abona 7 días antes del evento.",
       },
       {
         q: "¿Cuál es el número mínimo de personas?",
-        a: "La mayoría de nuestras experiencias están diseñadas para grupos. El mínimo es 1 persona para retiros individuales y 8 personas para eventos B2B corporativos.",
+        a: "Los retiros individuales son para 1 persona. Para reservas de grupo, el mínimo es 4 personas y el máximo 15.",
       },
       {
-        q: "¿Puedo reservar para un grupo grande?",
-        a: "Sí, contamos con infraestructura para hasta 120 personas. Para grupos superiores a 20 personas, contáctanos directamente para un presupuesto personalizado.",
+        q: "¿Puedo reservar para un grupo privado?",
+        a: "Sí, ofrecemos experiencias exclusivas para grupos. Contáctanos en unmezgz@gmail.com o 609 371 555 y coordinamos fechas y actividades personalizadas.",
       },
     ],
   },
@@ -27,11 +27,11 @@ const FAQS = [
     questions: [
       {
         q: "¿Qué métodos de pago aceptan?",
-        a: "Aceptamos tarjetas de crédito/débito (Stripe), PayPal y transferencia bancaria para reservas B2B. Todas las transacciones son seguras y encriptadas.",
+        a: "Aceptamos tarjetas de crédito/débito a través de Stripe. Próximamente añadiremos PayPal y Bizum.",
       },
       {
-        q: "¿Puedo pagar en cuotas?",
-        a: "Sí, ofrecemos financiación en 3, 6 o 12 meses sin intereses para reservas superiores a €500. Elige la opción al finalizar tu reserva.",
+        q: "¿Cuánto tengo que pagar para confirmar?",
+        a: "El pago mínimo es el 70% del total para confirmar tu plaza. El resto se abona 7 días antes del retiro.",
       },
     ],
   },
@@ -40,11 +40,15 @@ const FAQS = [
     questions: [
       {
         q: "¿Cuál es la política de cancelación?",
-        a: "Cancelación gratuita hasta 30 días antes del evento. Entre 30 y 7 días, se retiene el 50% del depósito. Menos de 7 días, no hay reembolso pero puedes transferir tu reserva a otra fecha.",
+        a: "Más de 10 días antes: reembolso del 100%. Entre 10 y 5 días: reembolso del 50%. Menos de 5 días: sin reembolso. No-show: se cobra el 100%.",
       },
       {
         q: "¿Qué pasa si llueve?",
         a: "Nuestras instalaciones están preparadas para todo tipo de climatología. En caso de alerta meteorológica severa, reprogramamos el evento sin coste adicional.",
+      },
+      {
+        q: "¿Se admiten mascotas?",
+        a: "Sí, previo aviso y autorización. Deben ir atados, identificados, con documentación en regla. Los perros potencialmente peligrosos deben llevar bozal. Sin recargo.",
       },
     ],
   },
@@ -53,11 +57,19 @@ const FAQS = [
     questions: [
       {
         q: "¿Necesito experiencia previa en yoga o meditación?",
-        a: "No es necesaria experiencia previa. Nuestros facilitadores adaptan cada sesión al nivel del grupo, desde principiantes hasta practicantes avanzados.",
+        a: "No es necesaria. Nuestros facilitadores adaptan cada sesión al nivel del grupo, desde principiantes hasta avanzados.",
       },
       {
         q: "¿Está incluida la alimentación?",
-        a: "Sí, todas nuestras experiencias incluyen gastronomía saludable basada en plantas, preparada por nuestro equipo de nutricionistas y chefs.",
+        a: "Los alojamientos no tienen cocina propia. Ofrecemos servicio de comidas bajo encargo previo. El horno y barbacoa están disponibles bajo solicitud.",
+      },
+      {
+        q: "¿Qué incluye el precio?",
+        a: "Uso del alojamiento, áreas comunes, huerto (recolectar y plantar), baños y duchas, WiFi. Horno y barbacoa bajo solicitud.",
+      },
+      {
+        q: "¿Dónde está ubicado UNME?",
+        a: "Camino Molino del Rey, 112, Pinseque, Zaragoza. En una zona protegida del Parque Natural.",
       },
     ],
   },
@@ -118,14 +130,6 @@ export default function FaqPage() {
       {/* FAQ Content */}
       <section className="py-24 px-6">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-8">
-            <input
-              type="text"
-              placeholder="Buscar preguntas..."
-              className="w-full border border-taupe-300 bg-linen p-4 text-earth-800 focus:border-forest-700 focus:outline-none"
-            />
-          </div>
-
           {FAQS.map((section) => (
             <div key={section.category} className="mb-12">
               <h2 className="font-display text-heading-2 mb-6 text-forest-700">
