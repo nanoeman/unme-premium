@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
-import "@/app/globals.css";
+
+// CSS global: usa ruta relativa desde src/app
+import "./globals.css";
+
 import { ClientLayout } from "@/components/client-layout";
 
 const quattrocento = Quattrocento_Sans({
@@ -50,7 +53,27 @@ export default function RootLayout({
       className={`${quattrocento.variable} ${cormorant.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900" suppressHydrationWarning>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z75P6NM4SN"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Z75P6NM4SN');
+            `,
+          }}
+        />
+      </head>
+      <body
+        className="font-sans bg-linen text-earth-800 antialiased selection:bg-forest-200 selection:text-forest-900"
+        suppressHydrationWarning
+      >
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

@@ -1,22 +1,28 @@
 import Link from "next/link";
 
 const footerLinks = {
-  experiencias: [
-    { href: "/experiencias", label: "Retiros" },
-    { href: "/experiencias", label: "Glamping" },
-    { href: "/eventos", label: "Eventos" },
-    { href: "/agenda", label: "Agenda" },
+  experiencia: [
+    { href: "/experiencias", label: "Yoga & Meditación" },
+    { href: "/experiencias", label: "Glamping Premium" },
+    { href: "/experiencias", label: "Gastronomía" },
+    { href: "/experiencias", label: "Espacios" },
   ],
-  empresa: [
-    { href: "/quienes-somos", label: "Quiénes somos" },
-    { href: "/empresas", label: "Empresas colaboradoras" },
-    { href: "/blog", label: "Blog" },
-    { href: "/galeria", label: "Galería" },
+  partners: [
+    { href: "#", label: "Escuelas de Yoga" },
+    { href: "#", label: "Coaches & Terapeutas" },
+    { href: "#", label: "Empresas" },
+    { href: "#", label: "Organizadores" },
   ],
-  soporte: [
-    { href: "/faq", label: "Preguntas frecuentes" },
-    { href: "/contacto", label: "Contacto" },
-    { href: "/area-privada", label: "Área privada" },
+  contacto: [
+    { href: "mailto:unmezgz@gmail.com", label: "unmezgz@gmail.com", external: true },
+    { href: "tel:+34609371555", label: "+34 609 371 555", external: true },
+    { href: "https://instagram.com/unme.experience", label: "Instagram", external: true },
+    { href: "#", label: "LinkedIn", external: true },
+  ],
+  legal: [
+    { href: "/terminos", label: "Términos y Condiciones" },
+    { href: "/privacidad", label: "Política de Privacidad" },
+    { href: "/cookies", label: "Política de Cookies" },
   ],
 };
 
@@ -24,27 +30,29 @@ export function Footer() {
   return (
     <footer className="bg-earth-900 py-16 text-linen/60">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-5">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-2">
             <h3 className="mb-4 font-display text-3xl tracking-wider text-linen uppercase">
               UNME
             </h3>
-            <p className="text-sm leading-relaxed">
-              Ultimate Natural Meditation Experience. Centro de bienestar premium
-              en Zaragoza. La naturaleza como herramienta de transformación
-              personal.
+            <p className="text-sm leading-relaxed mb-4">
+              Ultimate Natural Meditation Experience. La naturaleza como herramienta de transformación personal.
+            </p>
+            <p className="text-sm text-linen/40">
+              Camino Molino del Rey, 112<br />
+              Pinseque, Zaragoza
             </p>
           </div>
 
-          {/* Experiencias */}
+          {/* Experiencia */}
           <div>
             <h4 className="mb-4 text-sm font-medium tracking-wide text-linen uppercase">
-              Experiencias
+              Experiencia
             </h4>
             <ul className="space-y-3 text-sm">
-              {footerLinks.experiencias.map((link) => (
-                <li key={link.href + link.label}>
+              {footerLinks.experiencia.map((link) => (
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="transition-colors hover:text-amber-400"
@@ -56,14 +64,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Empresa */}
+          {/* Partners */}
           <div>
             <h4 className="mb-4 text-sm font-medium tracking-wide text-linen uppercase">
-              Empresa
+              Partners
             </h4>
             <ul className="space-y-3 text-sm">
-              {footerLinks.empresa.map((link) => (
-                <li key={link.href + link.label}>
+              {footerLinks.partners.map((link) => (
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="transition-colors hover:text-amber-400"
@@ -75,32 +83,55 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Soporte */}
+          {/* Contacto */}
           <div>
             <h4 className="mb-4 text-sm font-medium tracking-wide text-linen uppercase">
-              Soporte
+              Contacto
             </h4>
             <ul className="space-y-3 text-sm">
-              {footerLinks.soporte.map((link) => (
-                <li key={link.href + link.label}>
-                  <Link
-                    href={link.href}
-                    className="transition-colors hover:text-amber-400"
-                  >
-                    {link.label}
-                  </Link>
+              {footerLinks.contacto.map((link) => (
+                <li key={link.label}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-amber-400"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="transition-colors hover:text-amber-400"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 border-t border-linen/10 pt-8 text-center text-xs">
-          <p>
-            © {new Date().getFullYear()} UNME Experience. Todos los derechos
-            reservados.
-          </p>
+        {/* Legal + Bottom */}
+        <div className="mt-12 border-t border-linen/10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-6 text-xs">
+              {footerLinks.legal.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="transition-colors hover:text-amber-400"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <p className="text-center text-xs">
+              © {new Date().getFullYear()} UNME — Ultimate Natural Meditation Experience. Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
