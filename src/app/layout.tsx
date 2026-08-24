@@ -22,23 +22,41 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "UNME — Ultimate Natural Meditation Experience",
+  title: "UNME — Ultimate Natural Meditation Experience | Retiros exclusivos de yoga y meditación en Zaragoza",
   description:
-    "Centro de bienestar premium en Zaragoza. Retiros espirituales, glamping de lujo y experiencias de transformación personal en la naturaleza.",
+    "Retiros exclusivos de yoga y meditación en Zaragoza. La naturaleza como herramienta de transformación personal. Naturaleza, silencio y bienestar para desconectar del ruido y reconectar contigo.",
   keywords: [
-    "wellness",
+    "retiros yoga",
     "meditación",
-    "glamping",
-    "retiros",
+    "silencio",
+    "naturaleza",
     "Zaragoza",
     "bienestar",
-    "naturaleza",
+    "exclusivo",
+    "fin de semana",
+    "transformación personal",
+    "desconectar",
+    "wellness",
+    "mindfulness",
+    "glamping",
+    "retiros",
+    "conexion con la naturaleza",
   ],
   openGraph: {
-    title: "UNME — Ultimate Natural Meditation Experience",
-    description: "La naturaleza como herramienta de transformación personal.",
+    title: "UNME — Ultimate Natural Meditation Experience | Retiros exclusivos de yoga y meditación en Zaragoza",
+    description: "Retiros exclusivos de yoga y meditación en Zaragoza. La naturaleza como herramienta de transformación personal. Naturaleza, silencio y bienestar para desconectar del ruido y reconectar contigo.",
     type: "website",
     locale: "es_ES",
+    siteName: "UNME Experience",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UNME — Ultimate Natural Meditation Experience | Retiros exclusivos de yoga y meditación en Zaragoza",
+    description: "Retiros exclusivos de yoga y meditación en Zaragoza. La naturaleza como herramienta de transformación personal. Naturaleza, silencio y bienestar para desconectar del ruido y reconectar contigo.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
