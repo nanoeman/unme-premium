@@ -328,53 +328,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ================= LEAD CAPTURE ================= */}
-      <section className="bg-forest-700 py-24 px-6">
-        <div className="mx-auto max-w-4xl text-center text-linen">
-          <h2 className="font-display text-heading-1 mb-6">
-            ¿Quieres recibir información exclusiva?
-          </h2>
-          <p className="mb-10 text-lg text-linen/70">
-            Déjanos tu email y te enviaremos nuestra guía de bienestar + fechas disponibles.
-          </p>
-          <form
-            className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-              const phone = "+34609371555"; 
-              const message = `Hola, quiero info sobre retiros. Mi email: ${email}`;
-              const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-              window.open(whatsappUrl, "_blank");
-            }}
-          >
-            <input
-              type="email"
-              name="email"
-              placeholder="Tu email"
-              required
-              className="flex-1 rounded border border-linen/30 bg-linen/10 px-4 py-3 text-sm text-linen placeholder:text-linen/50 focus:border-amber-400 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="flex items-center justify-center gap-2 rounded bg-amber-500 px-6 py-3 text-sm font-medium uppercase tracking-wide text-linen transition-colors hover:bg-amber-600"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Enviar por WhatsApp
-            </button>
-          </form>
-          <p className="mt-4 text-xs text-linen/50">
-            Al enviar, aceptas nuestra{" "}
-            <Link href="/privacidad" className="underline hover:text-amber-400">
-              política de privacidad
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
           {/* ================= CTA ================= */}
       <section className="bg-earth-900 py-24 px-6">
         <div className="mx-auto max-w-4xl text-center text-linen">
