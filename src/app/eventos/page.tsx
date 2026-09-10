@@ -3,38 +3,30 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Eventos | UNME",
   description:
-    "Próximos eventos exclusivos, galas, lanzamientos y masterclasses en UNME.",
+    "Experiencias, encuentros y propuestas de bienestar en UNME.",
 };
 
 const EVENTS = [
   {
-    title: "Gala de Lanzamiento UNME 2026",
-    date: "15 de Agosto, 2026",
-    time: "18:00 - 23:00",
+    title: "Gala de Lanzamiento UNME",
     type: "Gala",
     spots: 50,
     vip: true,
   },
   {
     title: "Masterclass: Breathwork Avanzado",
-    date: "22 de Agosto, 2026",
-    time: "10:00 - 14:00",
     type: "Masterclass",
     spots: 20,
     vip: false,
   },
   {
     title: "Concierto de Cuencos Tibetanos",
-    date: "5 de Septiembre, 2026",
-    time: "19:30 - 21:00",
     type: "Concierto",
     spots: 40,
     vip: false,
   },
   {
     title: "Retiro Corporativo: Liderazgo Consciente",
-    date: "12-13 de Septiembre, 2026",
-    time: "Fin de semana",
     type: "B2B",
     spots: 15,
     vip: true,
@@ -85,7 +77,7 @@ export default function EventosPage() {
                     {event.title}
                   </h3>
                   <p className="mt-1 text-sm text-earth-500">
-                    {event.date} · {event.time}
+                    Próximamente. Consulta disponibilidad.
                   </p>
                 </div>
                 <div className="flex items-center gap-6">

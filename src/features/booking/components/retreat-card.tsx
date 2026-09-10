@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Star, MapPin, Users, Calendar } from 'lucide-react';
+import { MapPin, Users, Calendar } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 interface RetreatCardProps {
@@ -17,8 +17,6 @@ interface RetreatCardProps {
   price: number;
   duration: number;
   maxGuests: number;
-  rating?: number;
-  reviewCount?: number;
   image: string;
   status: 'OPEN' | 'WAITLIST' | 'CLOSED';
   featured?: boolean;
@@ -32,8 +30,6 @@ export function RetreatCard({
   price,
   duration,
   maxGuests,
-  rating = 0,
-  reviewCount = 0,
   image,
   status,
   featured = false,
@@ -111,27 +107,6 @@ export function RetreatCard({
           <MapPin className="h-4 w-4" />
           <span>{location}</span>
         </div>
-
-        {/* Rating */}
-        {rating > 0 && (
-          <div className="mb-3 flex items-center gap-1">
-            <div className="flex">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star
-                  key={star}
-                  className={`h-4 w-4 ${
-                    star <= Math.round(rating)
-                      ? 'fill-terracotta text-terracotta'
-                      : 'fill-stone-200 text-stone-200'
-                  }`}
-                />
-              ))}
-            </div>
-            <span className="text-sm text-stone-500">
-              {rating} ({reviewCount})
-            </span>
-          </div>
-        )}
 
         {/* Meta Info */}
         <div className="mb-4 flex items-center gap-4 text-sm text-stone-500">

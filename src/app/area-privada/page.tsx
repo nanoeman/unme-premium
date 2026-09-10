@@ -103,14 +103,13 @@ export default function AreaPrivadaPage() {
               <h2 className="font-display text-heading-2 mb-6 text-forest-700">Próximas experiencias</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Retiro de Yoga & Meditación", date: "15-16 de Agosto, 2026", status: "Confirmado" },
-                  { title: "Sound Healing Retreat", date: "5-6 de Septiembre, 2026", status: "Pendiente de pago" },
-                  { title: "Glamping Premium Experience", date: "19-20 de Septiembre, 2026", status: "Lista de espera" },
+                  { title: "Retiro de Yoga & Meditación", status: "Confirmado" },
+                  { title: "Sound Healing Retreat", status: "Pendiente de pago" },
+                  { title: "Glamping Premium Experience", status: "Lista de espera" },
                 ].map((booking) => (
                   <div key={booking.title} className="flex items-center justify-between border border-taupe-200 bg-linen p-6">
                     <div>
                       <h3 className="font-display text-lg text-forest-700">{booking.title}</h3>
-                      <p className="mt-1 text-sm text-taupe-600">{booking.date}</p>
                     </div>
                     <span className={`px-3 py-1 text-xs uppercase tracking-wide ${
                       booking.status === "Confirmado" ? "bg-forest-100 text-forest-700" :
