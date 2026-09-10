@@ -344,7 +344,7 @@ export default function HomePage() {
               e.preventDefault();
               const form = e.currentTarget;
               const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-              const phone = "+34600000000"; // Tu número
+              const phone = "+34609371555"; 
               const message = `Hola, quiero info sobre retiros. Mi email: ${email}`;
               const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
               window.open(whatsappUrl, "_blank");
@@ -403,7 +403,7 @@ export default function HomePage() {
 
       {/* ================= WHATSAPP FLOTANTE ================= */}
       <Link
-        href="https://wa.me/34600000000?text=Hola,%20quiero%20info%20sobre%20retiros%20UNME"
+        href="https://wa.me/34609371555?text=Hola,%20quiero%20info%20sobre%20retiros%20UNME"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-white shadow-lg transition-all hover:bg-green-600 hover:scale-105"
