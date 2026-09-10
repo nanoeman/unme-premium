@@ -546,6 +546,5 @@ export default function HomePage() {
         <span className="hidden sm:inline">WhatsApp</span>
       </Link>
     </div>
-       
   );
 }
