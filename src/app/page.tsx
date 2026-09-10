@@ -375,7 +375,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
+          {/* ================= CTA ================= */}
       <section className="bg-earth-900 py-24 px-6">
         <div className="mx-auto max-w-4xl text-center text-linen">
           <h2 className="font-display text-heading-1 mb-6">
@@ -400,6 +400,140 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ================= FOOTER ================= */}
+      <footer className="border-t border-taupe-200 bg-linen px-6 py-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 md:grid-cols-4">
+            {/* Columna 1: Branding */}
+            <div>
+              <h3 className="font-display text-heading-3 mb-4 text-forest-700">
+                UNME Experience
+              </h3>
+              <p className="mb-4 text-sm text-earth-600">
+                Retiros exclusivos de yoga y bienestar en Pinseque, Zaragoza.
+              </p>
+              <div className="flex gap-4">
+                <Link
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-earth-500 transition-colors hover:text-forest-700"
+                  aria-label="Instagram"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </Link>
+                {/* Añade más redes si las tienes */}
+              </div>
+            </div>
+
+            {/* Columna 2: Enlaces rápidos */}
+            <div>
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-forest-700">
+                Experiencias
+              </h4>
+              <ul className="space-y-2 text-sm text-earth-600">
+                <li>
+                  <Link href="/experiencias" className="hover:text-forest-700">
+                    Todas las experiencias
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/reserva" className="hover:text-forest-700">
+                    Reservar
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/eventos" className="hover:text-forest-700">
+                    Eventos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/empresas" className="hover:text-forest-700">
+                    Empresas
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Columna 3: Información */}
+            <div>
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-forest-700">
+                Información
+              </h4>
+              <ul className="space-y-2 text-sm text-earth-600">
+                <li>
+                  <Link href="/quienes-somos" className="hover:text-forest-700">
+                    Quiénes somos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faq" className="hover:text-forest-700">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="hover:text-forest-700">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contacto" className="hover:text-forest-700">
+                    Contacto
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Columna 4: Contacto */}
+            <div>
+              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-forest-700">
+                Contacto
+              </h4>
+              <ul className="space-y-2 text-sm text-earth-600">
+                <li className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  <a href="mailto:unmezgz@gmail.com" className="hover:text-forest-700">
+                    unmezgz@gmail.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  <a href="tel:+34609371555" className="hover:text-forest-700">
+                    +34 609 371 555
+                  </a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Compass className="h-4 w-4 mt-0.5" />
+                  <span>Pinseque, Zaragoza, España</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Línea divisoria */}
+          <div className="mt-12 border-t border-taupe-200 pt-8">
+            <div className="flex flex-col items-center justify-between gap-4 text-xs text-earth-500 md:flex-row">
+              <p>
+                &copy; {new Date().getFullYear()} UNME Experience. Todos los derechos reservados.
+              </p>
+              <div className="flex gap-6">
+                <Link href="/terminos" className="hover:text-forest-700">
+                  Términos y condiciones
+                </Link>
+                <Link href="/privacidad" className="hover:text-forest-700">
+                  Política de privacidad
+                </Link>
+                <Link href="/cookies" className="hover:text-forest-700">
+                  Política de cookies
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       {/* ================= WHATSAPP FLOTANTE ================= */}
       <Link
