@@ -13,6 +13,9 @@ import {
   Calendar,
   Users,
   Star,
+  MessageCircle,
+  Mail,
+  Phone,
 } from "lucide-react";
 
 const FEATURES = [
@@ -55,6 +58,24 @@ const STATS = [
   { value: "345%", label: "ROI a 5 años" },
 ];
 
+const TESTIMONIALS = [
+  {
+    text: "Una experiencia transformadora. El entorno, la comida y las sesiones de yoga me ayudaron a resetear por completo.",
+    author: "María, Madrid",
+    rating: 5,
+  },
+  {
+    text: "Nunca había desconectado tanto del ruido diario. Los tipis son increíbles y la atención, impecable.",
+    author: "Carlos, Barcelona",
+    rating: 5,
+  },
+  {
+    text: "Volví con otra energía. El baño de sonido fue lo más potente que he vivido en un retiro.",
+    author: "Laura, Valencia",
+    rating: 5,
+  },
+];
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-linen">
@@ -68,7 +89,7 @@ export default function HomePage() {
         <div className="relative z-20 mx-auto max-w-5xl px-6 text-center text-linen mt-16">
           <div className="mb-6 inline-flex items-center gap-2 border border-linen/20 bg-linen/10 px-4 py-1.5 text-xs uppercase tracking-widest text-amber-400 backdrop-blur-md">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Centro de Bienestar Premium — Zaragoza</span>
+            <span>Retiros de Yoga y Bienestar en Aragón — Zaragoza</span>
           </div>
 
           <h1 className="font-display text-display-1 md:text-display-1 mb-6 tracking-tight">
@@ -86,10 +107,10 @@ export default function HomePage() {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/experiencias"
+              href="/reserva"
               className="group flex w-full items-center justify-center gap-3 bg-forest-700 px-8 py-4 text-sm font-medium text-linen transition-all hover:bg-forest-800 sm:w-auto"
             >
-              <span>Explorar Experiencias</span>
+              <span>Reserva tu experiencia</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -276,8 +297,86 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="border-y border-taupe-200 bg-linen-50 py-24 px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <span className="mb-2 block text-xs uppercase tracking-widest text-forest-700">
+              Testimonios
+            </span>
+            <h2 className="font-display text-heading-1 text-forest-700">
+              Lo que dicen quienes ya han venido
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {TESTIMONIALS.map((t, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-start border border-taupe-200 bg-linen p-8"
+              >
+                <div className="mb-4 flex gap-1 text-amber-500">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} className="h-5 w-5 fill-current" />
+                  ))}
+                </div>
+                <p className="mb-6 text-sm text-earth-700">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-xs font-medium uppercase tracking-wide text-forest-700">
+                  {t.author}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= LEAD CAPTURE ================= */}
       <section className="bg-forest-700 py-24 px-6">
+        <div className="mx-auto max-w-4xl text-center text-linen">
+          <h2 className="font-display text-heading-1 mb-6">
+            ¿Quieres recibir información exclusiva?
+          </h2>
+          <p className="mb-10 text-lg text-linen/70">
+            Déjanos tu email y te enviaremos nuestra guía de bienestar + fechas disponibles.
+          </p>
+          <form
+            className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+              const phone = "+34600000000"; // Tu número
+              const message = `Hola, quiero info sobre retiros. Mi email: ${email}`;
+              const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+              window.open(whatsappUrl, "_blank");
+            }}
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu email"
+              required
+              className="flex-1 rounded border border-linen/30 bg-linen/10 px-4 py-3 text-sm text-linen placeholder:text-linen/50 focus:border-amber-400 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="flex items-center justify-center gap-2 rounded bg-amber-500 px-6 py-3 text-sm font-medium uppercase tracking-wide text-linen transition-colors hover:bg-amber-600"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Enviar por WhatsApp
+            </button>
+          </form>
+          <p className="mt-4 text-xs text-linen/50">
+            Al enviar, aceptas nuestra{" "}
+            <Link href="/privacidad" className="underline hover:text-amber-400">
+              política de privacidad
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="bg-earth-900 py-24 px-6">
         <div className="mx-auto max-w-4xl text-center text-linen">
           <h2 className="font-display text-heading-1 mb-6">
             ¿Listo para transformar tu fin de semana?
@@ -285,14 +384,33 @@ export default function HomePage() {
           <p className="mb-10 text-lg text-linen/70">
             Solo fines de semana. Solo exclusividad. Tu experiencia te espera.
           </p>
-          <Link
-            href="/reserva"
-            className="inline-block bg-amber-500 px-10 py-4 text-sm font-medium uppercase tracking-wide text-linen transition-colors hover:bg-amber-600"
-          >
-            Reservar ahora
-          </Link>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/reserva"
+              className="inline-block bg-amber-500 px-10 py-4 text-sm font-medium uppercase tracking-wide text-linen transition-colors hover:bg-amber-600"
+            >
+              Reservar ahora
+            </Link>
+            <Link
+              href="/contacto"
+              className="inline-block border border-linen/30 px-10 py-4 text-sm font-medium text-linen transition-colors hover:bg-linen/10"
+            >
+              Contactar
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* ================= WHATSAPP FLOTANTE ================= */}
+      <Link
+        href="https://wa.me/34600000000?text=Hola,%20quiero%20info%20sobre%20retiros%20UNME"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-white shadow-lg transition-all hover:bg-green-600 hover:scale-105"
+      >
+        <MessageCircle className="h-5 w-5" />
+        <span className="hidden sm:inline">WhatsApp</span>
+      </Link>
     </div>
   );
 }
