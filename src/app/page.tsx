@@ -546,5 +546,30 @@ export default function HomePage() {
         <span className="hidden sm:inline">WhatsApp</span>
       </Link>
     </div>
+              {/* Línea divisoria */}
+          <div className="mt-12 border-t border-taupe-200 pt-8">
+            <div className="flex flex-col items-center justify-between gap-4 text-xs text-earth-500 md:flex-row">
+              <div className="text-center md:text-left">
+                <p>
+                  &copy; {new Date().getFullYear()} UNME Experience. Todos los derechos reservados.
+                </p>
+                <p className="mt-1 text-earth-400">
+                  UNME Experience es un proyecto de{" "}
+                  <span className="font-medium text-earth-500">BlackMedussaPro</span>.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-6 md:justify-end">
+                <Link href="/terminos" className="hover:text-forest-700">
+                  Términos y condiciones
+                </Link>
+                <Link href="/privacidad" className="hover:text-forest-700">
+                  Política de privacidad
+                </Link>
+                <Link href="/cookies" className="hover:text-forest-700">
+                  Política de cookies
+                </Link>
+              </div>
+            </div>
+          </div>
   );
 }
