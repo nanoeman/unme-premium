@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Quattrocento_Sans, Cormorant_Garamond } from "next/font/google";
 
-// CSS global: usa ruta relativa desde src/app
 import "./globals.css";
-
 import { ClientLayout } from "@/components/client-layout";
 
 const quattrocento = Quattrocento_Sans({
@@ -21,38 +19,45 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const siteUrl = "https://unme-experience.com";
+
 export const metadata: Metadata = {
-  title: "UNME — Ultimate Natural Meditation Experience | Retiros exclusivos de yoga y meditación en Zaragoza",
+  title: {
+    default: "UNME — Retiros de Yoga y Bienestar en Aragón | Glamping Premium en Zaragoza",
+    template: "%s | UNME Experience",
+  },
   description:
-    "Retiros exclusivos de yoga y meditación en Zaragoza. La naturaleza como herramienta de transformación personal. Naturaleza, silencio y bienestar para desconectar del ruido y reconectar contigo.",
+    "Retiros exclusivos de yoga, meditación y bienestar en Pinseque, Zaragoza. Glamping premium en plena naturaleza para desconectar y reconectar contigo.",
   keywords: [
-    "retiros yoga",
-    "meditación",
-    "silencio",
-    "naturaleza",
-    "Zaragoza",
-    "bienestar",
-    "exclusivo",
-    "fin de semana",
+    "retiros yoga Zaragoza",
+    "retiro bienestar Aragón",
+    "glamping retiro yoga España",
+    "alquiler finca retiros Zaragoza",
+    "retiro meditación Pinseque",
+    "wellness retreat Spain",
+    "yoga weekend Zaragoza",
+    "naturaleza y silencio",
     "transformación personal",
-    "desconectar",
-    "wellness",
     "mindfulness",
-    "glamping",
-    "retiros",
-    "conexion con la naturaleza",
   ],
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: "UNME — Ultimate Natural Meditation Experience | Retiros exclusivos de yoga y meditación en Zaragoza",
-    description: "Retiros exclusivos de yoga y meditación en Zaragoza. La naturaleza como herramienta de transformación personal. Naturaleza, silencio y bienestar para desconectar del ruido y reconectar contigo.",
+    title: "UNME — Retiros de Yoga y Bienestar en Aragón | Glamping Premium",
+    description:
+      "Retiros exclusivos de yoga, meditación y bienestar en Pinseque, Zaragoza. Glamping premium en plena naturaleza.",
     type: "website",
     locale: "es_ES",
     siteName: "UNME Experience",
+    url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "UNME — Ultimate Natural Meditation Experience | Retiros exclusivos de yoga y meditación en Zaragoza",
-    description: "Retiros exclusivos de yoga y meditación en Zaragoza. La naturaleza como herramienta de transformación personal. Naturaleza, silencio y bienestar para desconectar del ruido y reconectar contigo.",
+    title: "UNME — Retiros de Yoga y Bienestar en Aragón",
+    description:
+      "Retiros exclusivos de yoga, meditación y bienestar en Pinseque, Zaragoza. Glamping premium en plena naturaleza.",
   },
   robots: {
     index: true,
@@ -65,6 +70,34 @@ export default function RootLayout({
 }: {
   children: ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: "UNME Experience",
+    description: "Retiros exclusivos de yoga y bienestar en Pinseque, Zaragoza",
+    url: siteUrl,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pinseque",
+      addressRegion: "Zaragoza",
+      addressCountry: "ES",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.7, // Ajustar con coordenadas reales
+      longitude: -0.8, // Ajustar con coordenadas reales
+    },
+    telephone: "+34 600 000 000", // Ajustar
+    email: "unmezgz@gmail.com",
+    priceRange: "€€€",
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Yoga", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Meditación", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Glamping", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Naturaleza", value: true },
+    ],
+  };
+
   return (
     <html
       lang="es"
@@ -72,7 +105,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Google tag (gtag.js) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-Z75P6NM4SN"
